@@ -4,7 +4,7 @@ Checkout [preview on codesandbox](https://codesandbox.io/p/sandbox/github/Manish
 
 ## Feature:
 1. Auto score increments
-2. Custom Row swapping and animations (no third party library used)
+2. Custom row swapping and animations (no third party library used)
 3. Custom countup animation (no third party library used)
 4. Responsive design 
 
