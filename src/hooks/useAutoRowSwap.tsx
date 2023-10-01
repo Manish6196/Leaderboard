@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 
-import { inverseYPosition, resetYPosition } from '../utils/row'
-import { ROW_SWAP_TRANSITION_MS } from '../constants/intex'
+import { inverseYPosition, transitPosition } from '../utils/row'
 import { DatasetRow } from '../types'
 
 const useAutoRowSwap = ({
@@ -12,22 +11,19 @@ const useAutoRowSwap = ({
   const rowRefs = useRef<HTMLDivElement[]>([])
   const prevTopPositions = useRef<Record<string, number>>({})
 
-  const prevAnimationFrameID = useRef<number | null>(null)
-  const currentAnimationFrameID = useRef<number | null>(null)
-  const timerID = useRef<number | null>(null)
+  const frameIdsRef = useRef<Record<string, number | null>>({
+    inverse: null,
+    transition: null,
+    reset: null,
+  })
 
   useLayoutEffect(() => {
     const clearAnimationFrames = () => {
-      if (prevAnimationFrameID.current) {
-        cancelAnimationFrame(prevAnimationFrameID.current)
-      }
-      if (currentAnimationFrameID.current) {
-        cancelAnimationFrame(currentAnimationFrameID.current)
-      }
-      if (timerID.current) {
-        clearTimeout(timerID.current)
-      }
+      Object.values(frameIdsRef.current).forEach(id => {
+        if (id) cancelAnimationFrame(id)
+      })
     }
+
     if (rowRefs.current?.length) {
       rowRefs.current.forEach(el => {
         if (!el) return
@@ -37,14 +33,14 @@ const useAutoRowSwap = ({
         if (typeof elementID === 'string') {
           const prevTop = prevTopPositions.current?.[elementID]
           if (currentTop !== prevTop) {
-            prevAnimationFrameID.current = requestAnimationFrame(() => {
+            const frameIds = frameIdsRef.current
+            frameIds.inverse = requestAnimationFrame(() => {
               inverseYPosition(el, currentTop - prevTop)
-              currentAnimationFrameID.current = requestAnimationFrame(() => {
-                resetYPosition(el)
-                timerID.current = setTimeout(
-                  clearAnimationFrames,
-                  ROW_SWAP_TRANSITION_MS
-                )
+              frameIds.transition = requestAnimationFrame(() => {
+                transitPosition(el)
+                frameIds.reset = requestAnimationFrame(() => {
+                  clearAnimationFrames()
+                })
               })
             })
           }
