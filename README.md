@@ -6,7 +6,7 @@ Checkout [preview on codesandbox](https://codesandbox.io/p/sandbox/github/Manish
 1. Auto score increments
 2. Custom row swapping and animations (no third party library used)
 3. Custom countup animation (no third party library used)
-4. Responsive design 
+4. Responsive design (https://prnt.sc/IqucZLeIQpFY)
 
 ![leaderboard-ss](https://github.com/Manish6196/Leaderboard/assets/46478690/fdb60466-50e7-4fc0-ad49-6459ff477776)
 
