@@ -1,0 +1,4 @@
+export const ROW_SWAP_TRANSITION_MS = 500
+
+export const COUNTUP_DURATION = (ROW_SWAP_TRANSITION_MS - 100) / 1000
+export const COUNTUP_STEPS = 8
