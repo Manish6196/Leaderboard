@@ -10,6 +10,6 @@ Checkout [preview on codesandbox](https://codesandbox.io/p/sandbox/github/Manish
 
 ![leaderboard-ss](https://github.com/Manish6196/Leaderboard/assets/46478690/fdb60466-50e7-4fc0-ad49-6459ff477776)
 
-Checkout Demo video:
+Demo video:
 
 [leaderboard-demo.webm](https://github.com/Manish6196/Leaderboard/assets/46478690/fb80c47e-bb86-4bab-881f-c28b70bb5226)
