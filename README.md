@@ -1,7 +1,6 @@
 # Live Leaderboard (React + TS + Styled Components)
 
-Checkout [preview on Github Pages](https://manish6196.github.io/Leaderboard/)
-Checkout [preview on codesandbox](https://codesandbox.io/p/sandbox/github/Manish6196/Leaderboard)
+Checkout live preview on [Github Pages](https://manish6196.github.io/Leaderboard/) or [codesandbox](https://codesandbox.io/p/sandbox/github/Manish6196/Leaderboard)
 
 ## Feature:
 1. Auto score increments
