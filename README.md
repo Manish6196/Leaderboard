@@ -1,5 +1,6 @@
 # Live Leaderboard (React + TS + Styled Components)
 
+Checkout [preview on Github Pages](https://manish6196.github.io/Leaderboard/)
 Checkout [preview on codesandbox](https://codesandbox.io/p/sandbox/github/Manish6196/Leaderboard)
 
 ## Feature:
